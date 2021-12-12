@@ -12,12 +12,13 @@ on:
   #    - cron: 0 0 * * 3
   # release:
   #   types: [published]
+  workflow_dispatch
   watch:
     types: [started]
 
 # 环境变量
 env:
-  REPO_BRANCH: master
+  REPO_BRANCH: pve-kernel-5.13
   UPLOAD_BIN: true
   UPLOAD_BRANCH: true
 
