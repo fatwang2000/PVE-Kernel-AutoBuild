@@ -57,8 +57,8 @@ jobs:
           sudo -E echo "deb http://deb.debian.org/debian buster-backports main" >>/etc/apt/sources.list
           
           sudo -E apt-get update
-          sudo -E apt-get install git nano screen patch fakeroot build-essential devscripts libncurses5 libncurses5-dev libssl-dev bc flex bison libelf-dev libaudit-dev libgtk2.0-dev libperl-dev asciidoc xmlto gnupg gnupg2 rsync lintian debhelper libdw-dev libnuma-dev libslang2-dev sphinx-common asciidoc-base automake cpio dh-python file gcc kmod libiberty-dev libtool perl-modules python2-minimal sed tar zlib1g-dev liblz4-tool idn zstd diffutils
-          sudo -E apt-get install libpve-common-perl dwarves
+          sudo -E apt-get install git nano screen patch fakeroot build-essential devscripts libncurses5 libncurses5-dev libssl-dev bc flex bison libelf-dev libaudit-dev libgtk2.0-dev libperl-dev asciidoc xmlto gnupg gnupg2 rsync lintian debhelper libdw-dev libnuma-dev libslang2-dev sphinx-common asciidoc-base automake cpio dh-python file gcc kmod libiberty-dev libtool perl-modules python3-minimal sed tar zlib1g-dev liblz4-tool idn zstd diffutils dwarves libpve-common-perl lz4
+          #sudo -E apt-get install libpve-common-perl dwarves
           sudo -E apt-get install -t buster-backports dwarves
           sudo -E apt-get autoremove --purge
           sudo -E apt-get clean
@@ -123,8 +123,8 @@ jobs:
         run: |
           cd pve-kernel
           echo -e "$(nproc) thread compile"
-          #make -j$(nproc) || make -j1 || make -j1 V=s
-          make -j1 V=s
+          make -j$(nproc) || make -j1 || make -j1 V=s
+          #make -j1 V=s
           echo "========================================"
           echo "[Space Usage]:"
           echo "========================================"
