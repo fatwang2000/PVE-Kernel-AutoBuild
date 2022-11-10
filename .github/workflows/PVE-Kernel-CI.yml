@@ -55,10 +55,10 @@ jobs:
           sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC
           sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138
           sudo -E echo "deb [arch=amd64] http://deb.debian.org/debian buster-backports main" >>/etc/apt/sources.list
-          sudo -E echo "deb [arch=amd64] http://security.debian.org/debian-security bullseye-security main contrib" >>/etc/apt/sources.list
+          sudo -E echo "deb [arch=amd64] http://deb.debian.org/debian bullseye main" >>/etc/apt/sources.list
           
           sudo -E apt-get update
-          sudo -E apt-get install perl-base=5.32.1-4+deb11u1
+          sudo -E apt-get install perl-base=5.32.1-4+deb11u2
           sudo -E apt-get install git nano screen patch fakeroot build-essential devscripts perl-base libpve-rs-perl libproxmox-rs-perl libncurses5 libncurses5-dev libssl-dev bc flex bison libelf-dev libaudit-dev libgtk2.0-dev libperl-dev asciidoc xmlto gnupg gnupg2 rsync lintian debhelper libdw-dev libnuma-dev libslang2-dev sphinx-common asciidoc-base automake cpio dh-python file gcc kmod libiberty-dev libtool perl-modules python3-minimal sed tar zlib1g-dev liblz4-tool idn zstd diffutils dwarves libpve-common-perl lz4
           #sudo -E apt-get install libpve-common-perl dwarves
           sudo -E apt-get install -t buster-backports dwarves
